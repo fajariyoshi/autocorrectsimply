@@ -1,33 +1,35 @@
-words_list = ["hari", "ini", "saya", "sangat", "bersemangat", "sekali", "dengan", "mata", "kuliah", "Pemrosesan", "bahasa", "alami"]
+words_list = ["hari", "ini", "saya", "sangat", "bersemangat", "sekali", "dengan", "mata", "kuliah", "Pemrosesan", "bahasa", "alami"] #wordlist / citra bahasa
 
-prompt = input("Tuliskan Text> ")
+prompt = input("Tuliskan Text > ")                                                                                                    #penginputan text
 
-output = ""
-list_1 = []
-list_2 = []
-char_num = 3
-num_string = "Tiga"
-corrected = False
+output = ""                                                                                                                            # print hasil
+list_1 = []                                                                                                                             #list kolom 1
+list_2 = []                                                                                                                             #list kolom 2
+char_num = 2                                                                                                                            # karatker minimal
+num_string = "Dua"                                                                                                                      # string karakter
+corrected = False                                                                                                                       # koreksi = salah
 
-if len(prompt) <= 3:
-    char_num = 3
-    num_string = "Tiga"
-elif len(prompt) >= 4:
+if len(prompt) <= 2:                                                                                                                    # jika karakter kurang dari 2
+    char_num = 2                                                                                            
+    num_string = "Dua"
+elif len(prompt) >= 4:                                                                                                                  # jika panjang karakter 4
     char_num = 4
     num_string = "Empat"
 
-for word in words_list:
+for word in words_list:                                                                                                                 #pengambilan wordlist
 
     if len(prompt) < char_num:
         print(f"Harus memiliki lebih dari {num_string} karakter.")
         break
+    
 
-    if prompt == word:
-        print("Yes.")
+    if prompt == word:                                                                                                                  # hasil jika sesuai dari wordlist
+        print(f"{word} <- adalah Benar-benar bahasa Alami!.")
         break
+    
 
-    elif prompt != word:
-
+    elif prompt != word:                                                                                                                # hasil jika tidak sesuai / salah dari wordlist
+        
         for char in word:
             if len(list_1) < char_num:
                 list_1.append(char)
@@ -46,6 +48,8 @@ for word in words_list:
         elif list_1 != list_2:
             list_1.clear()
             list_2.clear()
+        
 
-if corrected:
-    print(f"{output} -> Sebagian Benar.")
+if corrected:                                                                                                                           #terkoreksi benar dari wordlist
+    print(f"{output} -> Mungkin yang anda maksud.")
+    
