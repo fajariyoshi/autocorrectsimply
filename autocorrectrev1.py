@@ -42,12 +42,13 @@ for word in words_list:                                                         
         if list_1 == list_2:
             output += word
             corrected = True
-            uncorrected = False
+            
             list_1.clear()
             list_2.clear()
             break
             
         elif list_1 != list_2:
+            uncorrected = False
             list_1.clear()
             list_2.clear()
             
